@@ -817,7 +817,7 @@ class SearchEverything {
 		global $wpdb;
 		$s =  isset( $this->query_instance->query_vars['s'] ) ? $this->query_instance->query_vars['s'] : '';
 		// highlighting
-		if ( is_search() && $s != '' ) {
+		if ( !is_admin() && is_search() && $s != '' ) {
 			$highlight_color = $this->options['se_highlight_color'];
 			$highlight_style = $this->options['se_highlight_style'];
 			$search_terms = $this->se_get_search_terms();
